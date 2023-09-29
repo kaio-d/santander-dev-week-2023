@@ -6,11 +6,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class BaseItem {
+public abstract class BaseItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String icon;
+
     private String description;
 
     public Long getId() {
@@ -36,4 +39,5 @@ public class BaseItem {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
